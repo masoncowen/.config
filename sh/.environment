@@ -1,4 +1,4 @@
-CONFIG=$HOME/config; export CONFIG
+CONFIG=$XDG_CONFIG_HOME; export CONFIG
 BIN=$CONFIG/bin; export BIN
 
 SH_CONFIG=$CONFIG/sh; export SH_CONFIG
