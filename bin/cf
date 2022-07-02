@@ -5,6 +5,8 @@ case $1 in
     ;;
   "t"|"tmux") $VISUAL $TMUX_CONFIG
     ;;
+  "ta"|"task") $VISUAL $CONFIG/task/taskrc
+    ;;
   "e"|"env"|"environment") $VISUAL $ENV
     ;;
   "a"|"alias") $VISUAL $ALIAS
@@ -12,5 +14,5 @@ case $1 in
   "p"|"profile") $VISUAL $PROFILE
     ;;
   "f"|"func"|"function") $VISUAL $FUNC
-	;;
+    ;;
 esac
