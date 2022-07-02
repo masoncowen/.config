@@ -5,7 +5,7 @@ SH_CONFIG=$CONFIG/sh; export SH_CONFIG
 PROFILE=$SH_CONFIG/.profile; export PROFILE
 ENV=$SH_CONFIG/.environment; export ENV
 ALIAS=$SH_CONFIG/.alias; export ALIAS
-FUNC=$SH_CONFIG/.func; export FUNC
+FUNC=$SH_CONFIG/.function; export FUNC
 
 VIM_CONFIG=$CONFIG/vim/.vimrc; export VIM_CONFIG
 TMUX_CONFIG=$CONFIG/tmux/.tmux.conf; export TMUX_CONFIG
