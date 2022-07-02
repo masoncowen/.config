@@ -1,0 +1,13 @@
+#!/bin/sh
+help(){
+echo "usage: ${0##*/} [-h]"
+}
+[ $1 = '-h' ] && exec help
+tex(){
+pdf=${1%.tex}.pdf
+mupdf $pdf &
+}
+case $1 in
+*.tex) tex $1
+;;
+esac

@@ -1,0 +1,29 @@
+#!/bin/sh
+
+RED='\033[0;31m'
+NC='\033[0m'
+
+function dt {
+  echo -n -e "${RED}dot:${NC} "
+  git -C "$HOME/dot" $*
+}
+
+function uni {
+  echo -n -e "${RED}uni:${NC} "
+  git -C "$HOME/uni" $*
+}
+
+function sm {
+  echo -n -e "${RED}sm:${NC} "
+  git -C "$HOME/sm" $*
+}
+
+function qmk {
+  echo -n -e "${RED}qmk_firmware:${NC} "
+  git -C "$HOME/qmk_firmware" $*
+}
+
+[ -d $HOME/dot ] && dt $*
+[ -d $HOME/uni ] && uni $*
+[ -d $HOME/sm ] && sm $*
+[ -d $HOME/qmk_firmware ] && qmk $*

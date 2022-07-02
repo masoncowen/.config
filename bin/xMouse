@@ -1,0 +1,21 @@
+#!/bin/sh
+
+help(){
+cat <<EOH 
+usage: ${0##*/} [-h]
+[-h]: Prints this message and exits.
+[TODO] This help message, what does this command do?
+EOH
+exit 0
+}
+
+while getopts h opts
+do
+	case $opts in
+		h) help ;;
+	esac
+done
+shift $(($OPTIND - 1))
+
+xinput --disable 7
+xinput --disable 8

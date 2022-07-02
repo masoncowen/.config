@@ -1,0 +1,4 @@
+#!/bin/sh
+dir=$1
+#TODO pure sh cat
+cat $PWD/$dir/readme.md 

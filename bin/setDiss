@@ -1,0 +1,23 @@
+#!/bin/sh
+
+help(){
+cat <<EOH 
+usage: ${0##*/} [-h]
+[-h]: Prints this message and exits.
+[TODO] This help message, what does this command do?
+EOH
+exit 0
+}
+
+while getopts h opts
+do
+	case $opts in
+		h) help ;;
+	esac
+done
+shift $(($OPTIND - 1))
+
+cd "$HOME/uni/diss"
+mupdf 20page.pdf &
+tmux -2 -f "$TMUX_CONFIG"
+tmux -c "$VISUAL 20page.tex"

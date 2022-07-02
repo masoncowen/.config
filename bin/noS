@@ -1,0 +1,31 @@
+#!/bin/sh
+
+help(){
+cat <<EOH 
+usage: ${0##*/} [-h]
+[-h]: Prints this message and exits.
+[TODO] This help message, what does this command do?
+EOH
+exit 0
+}
+
+[ -z $1 ] && ([ ! -t 0 ] || help)
+while getopts h opts
+do
+	case $opts in
+		h) help ;;
+	esac
+done
+shift $(($OPTIND - 1))
+
+while read line
+do
+case $line in
+	*s*)
+	printf '%s%s\n' "${line%%s*}" "${line#*s}"
+	;;
+	*)
+	printf '%s\n' "$line"
+	;;
+esac
+done <"${1:-/dev/stdin}"

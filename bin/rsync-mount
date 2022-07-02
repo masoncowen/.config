@@ -1,0 +1,5 @@
+#/bin/sh
+mount $1 /mnt/ext
+rsync -vrut /root/ /mnt/ext
+rsync -vrut /mnt/ext/ /root
+umount /mnt/ext

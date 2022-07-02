@@ -1,0 +1,28 @@
+fontname "Input Mono:pixelsize=14:bold"
+sticky yes
+borderwidth 3
+color activeborder darkblue
+snapdist 4
+gap 40 10 10 10
+ignore sxiv
+ignore tint2
+
+#KEYBINDINGS
+unbind-key all
+unbind-mouse all
+
+bind-key CS-q quit
+bind-key CS-r restart
+bind-key CS-Return terminal
+bind-key CS-f window-maximize
+bind-key CS-t window-vtile
+bind-key CS-x window-close
+bind-key CS-j window-cycle
+bind-key CS-k window-rcycle
+bind-key CS-Left window-snap-left
+bind-key CS-Right window-snap-right
+bind-key CS-Up window-snap-up
+bind-key CS-Down window-snap-down
+bind-key CS-a window-hmaximize
+bind-key CS-s window-vmaximize
+bind-key CS-d window-lower

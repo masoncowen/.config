@@ -1,0 +1,13 @@
+#!/bin/sh 
+start=1
+end=$1
+nums="2 11 9 5 10 20 100 1000"
+while [ $start -le $end ]; do
+	R1=$(($RANDOM%10 + 1))
+	R2=$(shuf -en1 $nums)
+	echo -n "Q$start: What is $R1 times $R2? "
+	read ans
+	Ans=$(($R1*$R2))
+	[ $ans = $Ans ] && echo Correct || echo Incorrect: correct answer was $Ans
+	start=$((start+1))
+done

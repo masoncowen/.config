@@ -1,0 +1,6 @@
+#!/bin/sh
+for var in "$@"
+do
+	rsync -vrut $var /root
+	rsync -vrut /root/$var/ $var
+done

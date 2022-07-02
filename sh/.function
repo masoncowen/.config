@@ -1,0 +1,19 @@
+qw() {
+	unset tinp
+        while true ; do
+                read -r inp
+                [ "$inp" != "." ] && tinp="${tinp:+"$tinp\n"}$inp" || break
+        done
+        echo -e "$tinp"
+}
+
+gw() {
+	dir="$HOME/sm/wwwsrc"
+	file="$dir/$1.sm"
+	[ -f $file ] && cat $file
+	qw >> $file
+	git -C $dir add $file
+	echo -n "Commit message: "
+	read com
+	git -C $dir commit -m "$com"
+}

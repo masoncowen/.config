@@ -1,0 +1,29 @@
+#!/bin/sh
+
+dotTex () {
+  dir=${1%/*}
+  file=${1#$dir/}
+  cd $dir
+  pdflatex $file
+  bibtex ${file%.tex}
+  pdflatex $file
+  rm *.aux *.log *.bbl *.blg *.toc
+  pkill -hup mupdf
+}
+
+dir=${1%/*}
+file=${1#$dir/}
+cd $dir
+
+case $1 in
+  *.tex) 
+	  pdflatex $file
+	  bibtex ${file%.tex}
+	  pdflatex $file
+	  pdflatex $file
+	  rm *.aux *.log *.bbl *.blg *-blx.bib *.run.xml
+    ;;
+  *.zig)
+    zig build run $file
+    ;;
+esac

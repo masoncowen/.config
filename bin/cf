@@ -1,0 +1,14 @@
+#!/bin/sh
+. $HOME/config/sh/.environment
+case $1 in
+  "v"|"vi"|"vim") $VISUAL $VIM_CONFIG
+    ;;
+  "t"|"tmux") $VISUAL $TMUX_CONFIG
+    ;;
+  "e"|"env") $VISUAL $ENV
+    ;;
+  "a"|"alias") $VISUAL $ALIAS
+    ;;
+  "p"|"profile") $VISUAL $PROFILE
+    ;;
+esac

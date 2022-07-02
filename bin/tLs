@@ -1,0 +1,25 @@
+#!/bin/sh
+
+help(){
+cat <<EOH 
+usage: ${0##*/} [-h]
+[-h]: Prints this message and exits.
+[TODO] This help message, what does this command do?
+EOH
+exit 0
+}
+
+DIR=$PWD
+
+while getopts hd: opts
+do
+	case $opts in
+		h) help ;;
+		d) DIR=$OPTARG ;;
+	esac
+done
+shift $(($OPTIND - 1))
+
+tmux setenv DIR $DIR
+
+tmux split-window -bfdl 3 'while true; do sleep 1; export $(tmux showenv DIR); clear; echo -n $(ls -F $DIR); done'

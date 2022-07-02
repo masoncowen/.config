@@ -1,0 +1,58 @@
+#!/bin/sh
+
+help(){
+cat <<EOH 
+usage: ${0##*/} [-hf] [scriptname]
+[-h]: Prints this message and exits.
+[-f]: Sets flag for script to be a filter.
+This script creates a shell script with a precreated preamble, including help command.
+EOH
+exit 0
+}
+
+[ -z $1 ] && help
+while getopts hf opts
+do
+	case $opts in
+		h) help ;;
+		f) filter=true ;;
+	esac
+done
+shift $(($OPTIND -1))
+
+[ $2 ] && exec echo No spaces allowed in script name.
+
+file="$BIN/$1"
+[ -f $file ] && exec echo Script by that name already exists
+touch $file
+chmod +x $file
+
+cat <<'EOF' > $file
+#!/bin/sh
+
+help(){
+cat <<EOH 
+usage: ${0##*/} [-h]
+[-h]: Prints this message and exits.
+[TODO] This help message, what does this command do?
+EOH
+exit 0
+}
+
+[ -z $1 ] && ([ ! -t 0 ] || help)
+while getopts h opts
+do
+	case $opts in
+		h) help ;;
+	esac
+done
+shift $(($OPTIND - 1))
+
+EOF
+
+[ $filter ] && cat <<'EOF' >> $file
+while read line
+do
+EOF
+$EDITOR $file
+[ $filter ] && echo 'done <"${1:-/dev/stdin}"' >> $file
