@@ -5,7 +5,7 @@ alias ls='ls -F'
 alias ?='ddg'
 
 #Replace config files from home
-alias tmux="tmux -2 -f $CONFIG/tmux/.tmux.conf"
+alias tmux="tmux -2 -f $CONFIG/tmux/tmux.conf"
 alias vim="vim -S $CONFIG/vim/vimrc"
 
 #Source files
