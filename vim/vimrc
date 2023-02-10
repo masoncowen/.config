@@ -1,0 +1,220 @@
+"Gvim Options
+if has('win32')
+  set nocompatible
+  set shell=C:\Windows\system32\WindowsPowerShell\v1.0\powershell.exe
+  set guioptions-=m "menu bar
+  set guioptions-=T "Tool bar
+  set guioptions-=r "scroll bar
+  set guifont=Fixedsys:h7
+  set vb t_vb=
+
+  nnoremap <C-Up> :silent! let &guifont = substitute(
+        \ &guifont,
+        \ ':h\zs\d\+',
+        \ '\=eval(submatch(0)+7)',
+        \ '')<CR>
+
+  nnoremap <C-Down> :silent! let &guifont = substitute(
+        \ &guifont,
+        \ ':h\zs\d\+',
+        \ '\=eval(submatch(0)-7)',
+        \ '')<CR>
+
+  let $HOME = "Q:\\Programs"
+  cd $HOME
+  let $VIM_CONFIG = $HOME."\\.config\\vim\\vimrc"
+  let $NOTES = $HOME."\\Notes.md"
+  let $PLUG = $VIM."\\plugged"
+else
+  if has('unix')
+    "Vim-Plug
+    if empty(glob(data_dir . '/autoload/plug.vim'))
+      silent execute '!curl.exe -fLo '.data_dir.'/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    endif
+    autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)')) | PlugInstall --sync | source $MYVIMRC | endif
+  endif
+  ""Vimwiki options
+  let g:vimwiki_list = [{'path': '$XDG_DATA_HOME/vimwiki/',
+        \ 'syntax': 'markdown', 'ext': '.md'}]
+  let g:vimwiki_global_ext = 0
+  ""Zettel options
+  let g:zettel_default_mappings = 0
+  augroup filetype_vimwiki
+    autocmd!
+    autocmd FileType vimwiki nmap T <Plug>ZettelYankNameMap
+    autocmd FileType vimwiki xmap z <Plug>ZettelNewSelectedMap
+    autocmd FileType vimwiki nmap gZ <Plug>ZettelReplaceFileWithLink
+  augroup END
+endif
+
+" Plugins
+filetype plugin on
+if ! empty(globpath(&rtp, 'autoload/plug.vim'))
+  call plug#begin($PLUG)
+  Plug 'vimwiki/vimwiki'
+  " Plug 'junegunn/goyo.vim' "Goyo seems like a buggy mess ngl
+  "Plug 'junegunn/limelight.vim'
+  Plug 'tpope/vim-surround'
+  "Plug 'tpope/vim-sensible'
+  Plug 'tpope/vim-unimpaired'
+  Plug 'tpope/vim-commentary'
+  Plug 'tpope/vim-endwise'
+  Plug 'preservim/vim-markdown'
+  Plug 'vim-latex/vim-latex'
+  "Plug 'junegunn/fzf'
+  "Plug 'junegunn/fzf.vim'
+  Plug 'michal-h21/vim-zettel'
+  Plug 'tyrannicaltoucan/vim-quantum'
+  "Plug '4513ECHO/vim-colors-hatsunemiku'
+  " Plug 'vim-scripts/zoom.vim'
+  Plug 'tpope/vim-repeat'
+  Plug 'svermeulen/vim-subversive'
+  Plug 'tpope/vim-abolish'
+  Plug 'jiangmiao/auto-pairs'
+  Plug 'kurkale6ka/vim-pairs'
+  Plug 'chrisbra/csv.vim'
+  call plug#end()
+else
+  echo "vim-plug not installed"
+endif
+
+""Subversive mappings
+nmap s <plug>(SubversiveSubstitute)
+nmap ss <plug>(SubversiveSubstituteLine)
+nmap S <plug>(SubversiveSubstituteToEndOfLine)
+
+"Visual options
+syntax on
+set nu ruler
+set mouse=a
+set termguicolors
+"colorscheme desert
+colorscheme quantum
+"colorscheme hatsunemiku
+set scrolloff=5
+set colorcolumn=80
+
+"Folding options
+set foldenable foldmethod=indent foldignore=
+
+"Searching
+set ignorecase smartcase
+
+"Tabs
+set autoindent smartindent smarttab expandtab
+set shiftwidth=2 tabstop=2 softtabstop=2
+
+"Swap files and Backups
+set noswapfile
+set nobackup nowritebackup
+set undodir=~/.vim/undodir undofile
+
+"Basic mappings
+nmap Y y$
+map <silent> !. !!sh<CR>
+
+"Autocomplete
+function! OmniPopup(action)
+  if pumvisible()
+    if a:action == 'j'
+      return "\<C-N>"
+    elseif a:action == 'k'
+      return "\<C-P>"
+    endif
+  endif
+  return a:action
+endfunction
+inoremap <silent>j <c-r>=OmniPopup('j')<cr>
+inoremap <silent>k <c-r>=OmniPopup('k')<cr>
+
+"Leader mappings
+let mapleader=" "
+let maplocalleader=";"
+"Insert mode
+inoremap <localleader> <nop>
+inoremap <localleader><localleader> ;
+inoremap <localleader><leader> <esc>
+inoremap <localleader>j <C-n>
+inoremap <localleader>k <C-p>
+inoremap <localleader>v <C-r>+
+nmap <leader>s :w<cr>
+nmap <leader>z ZZ
+nmap <leader>q ZQ
+nmap <silent> <leader>r :cd $HOME<cr>:source $VIM_CONFIG<cr>:echo 'Reloaded'<cr>
+nmap <silent> <leader>R :cd $HOME<cr>:tab drop $VIM_CONFIG<cr>:w<cr>:source $VIM_CONFIG<cr>:echo 'Reloaded'<cr>
+nmap <silent> <leader>cf :tab drop $VIM_CONFIG<cr>
+nmap <silent> <leader>md :tab drop $NOTES<cr>
+nmap <silent> <leader>ssh :tab ter++close ssh MCO<cr>
+nmap <silent> <leader>ter :tab ter<cr>
+nmap <leader>b <c-^>
+"This is just because gt/gT is an annoying bigram on QWERTY
+nmap <leader>t gt
+nmap <leader>T gT
+nmap <leader>j <c-w>j
+nmap <leader>k <c-w>k
+nmap <leader>n :tabe<cr>
+nnoremap ,, ,
+nnoremap ,. ;
+nnoremap <leader>. ;.
+
+"File Specific
+""Markdown
+function! MarkdownLevel()
+  let h = matchstr(getline(v:lnum), '^#\+')
+  if empty(h)
+    return "="
+  else
+    return ">" . len(h)
+  endif
+endfunction
+
+iab <expr> dts~ strftime('%c')
+iab <expr> tab~ normal >>
+iab call~ -<space>Time:<space>dts~<return><tab>-<space>Caller:<space><return><tab>-<space>Items:<space><return><tab><tab>-<space>
+
+autocmd BufEnter * if &filetype == "" | setlocal ft=markdown | endif
+let g:vim_markdown_math = 1
+let g:vim_markdown_frontmatter = 1
+set conceallevel=2
+let g:netrw_browsex_viewer= "start"
+au BufEnter *.md setlocal foldexpr=MarkdownLevel()
+au BufEnter *.md setlocal foldmethod=expr
+au BufEnter *.md setlocal foldlevel=2
+function! NeatFoldText()
+    let line = ' ' . substitute(getline(v:foldstart), '^\s*"\?\s*\|\s*"\?\s*{{' . '{\d*\s*', '', 'g') . ' '
+    let lines_count = v:foldend - v:foldstart + 1
+    let lines_count_text = '| ' . printf("%10s", lines_count . ' lines') . ' |'
+    let foldchar = matchstr(&fillchars, 'fold:\zs.')
+    let foldtextstart = strpart('+' . repeat(foldchar, v:foldlevel*2) . line, 0, (winwidth(0)*2)/3)
+    let foldtextend = lines_count_text . repeat(foldchar, 8)
+    let foldtextlength = strlen(substitute(foldtextstart . foldtextend, '.', 'x', 'g')) + &foldcolumn
+    return foldtextstart . repeat(foldchar, winwidth(0)-foldtextlength) . foldtextend
+endfunction
+set foldtext=NeatFoldText()
+
+""Python
+autocmd Filetype python nnoremap <buffer> <localleader>g :w<cr>:ter++close
+      \ python %<cr>
+autocmd Filetype python nnoremap <buffer> <localleader>G :w<cr>:ter
+      \ python %<cr>
+autocmd FileType python set shiftwidth=2 tabstop=2 softtabstop=2
+""AutoHotKey
+autocmd Filetype autohotkey nnoremap <buffer> <localleader>g :w<cr>:ter++close 
+      \autohotkey %<cr>
+""Perl
+autocmd Filetype perl nnoremap <buffer> <localleader>g :w<cr>:ter 
+      \C:\Users\mason.owen\Programs\StrawberryPerl\portableshell.bat %<cr>
+""TeX"
+autocmd BufEnter *.tex cd %:h
+autocmd Filetype tex,plaintex nnoremap <buffer> <localleader>g :w<cr>:ter++close pdflatex -jobname output index<cr>
+autocmd Filetype tex,plaintex nnoremap <buffer> <localleader>v :ter++close C:\Users\mason.owen\Programs\SumatraPDF\SumatraPDF-3.4.6-64.exe output.pdf<cr>
+autocmd Filetype tex,plaintex nnoremap <buffer> <localleader>p :ter++close C:\Users\mason.owen\Programs\SumatraPDF\SumatraPDF-3.4.6-64.exe -print-to-default output.pdf<cr>
+autocmd Filetype tex,plaintex nnoremap <buffer> <localleader>G :w<cr>:ter pdflatex -jobname output index<cr>
+
+"Leaving this here for memories
+"nnoremap <leader>c :!viCompile ~/writing/diss/diss.tex <cr><cr>
+
+"Tmux integrations
+"autocmd BufReadPost,FileReadPost,BufNewFile,BufEnter * call system("tmux 
+      "\rename-window 'vim|" . expand("%:t") . "'")
+"autocmd VimLeave * call system("tmux setw automatic-rename")
