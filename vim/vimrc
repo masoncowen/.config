@@ -66,7 +66,7 @@ endif
 " Plugins
 filetype plugin on
 if ! empty(globpath(&rtp, 'autoload/plug.vim'))
-  call plug#begin($PLUG)
+ call plug#begin($XDG_DATA_HOME.'/vim')
   " Plug 'vimwiki/vimwiki'
   " Plug 'junegunn/goyo.vim' "Goyo seems like a buggy mess ngl
   "Plug 'junegunn/limelight.vim'
