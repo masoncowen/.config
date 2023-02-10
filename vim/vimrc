@@ -28,30 +28,19 @@ if has('win32')
 else
   if has('unix')
     "Vim-Plug
+    let data_dir = has('nvim') ? stdpath('data') . '/state' : '~/.vim'
     if empty(glob(data_dir . '/autoload/plug.vim'))
       silent execute '!curl.exe -fLo '.data_dir.'/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
     endif
     autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)')) | PlugInstall --sync | source $MYVIMRC | endif
   endif
-  ""Vimwiki options
-  let g:vimwiki_list = [{'path': '$XDG_DATA_HOME/vimwiki/',
-        \ 'syntax': 'markdown', 'ext': '.md'}]
-  let g:vimwiki_global_ext = 0
-  ""Zettel options
-  let g:zettel_default_mappings = 0
-  augroup filetype_vimwiki
-    autocmd!
-    autocmd FileType vimwiki nmap T <Plug>ZettelYankNameMap
-    autocmd FileType vimwiki xmap z <Plug>ZettelNewSelectedMap
-    autocmd FileType vimwiki nmap gZ <Plug>ZettelReplaceFileWithLink
-  augroup END
 endif
 
 " Plugins
 filetype plugin on
 if ! empty(globpath(&rtp, 'autoload/plug.vim'))
   call plug#begin($PLUG)
-  Plug 'vimwiki/vimwiki'
+  " Plug 'vimwiki/vimwiki'
   " Plug 'junegunn/goyo.vim' "Goyo seems like a buggy mess ngl
   "Plug 'junegunn/limelight.vim'
   Plug 'tpope/vim-surround'
@@ -63,7 +52,7 @@ if ! empty(globpath(&rtp, 'autoload/plug.vim'))
   Plug 'vim-latex/vim-latex'
   "Plug 'junegunn/fzf'
   "Plug 'junegunn/fzf.vim'
-  Plug 'michal-h21/vim-zettel'
+  "Plug 'michal-h21/vim-zettel'
   Plug 'tyrannicaltoucan/vim-quantum'
   "Plug '4513ECHO/vim-colors-hatsunemiku'
   " Plug 'vim-scripts/zoom.vim'
