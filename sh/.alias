@@ -6,7 +6,7 @@ alias ?='ddg'
 
 #Replace config files from home
 alias tmux="tmux -2 -f $CONFIG/tmux/.tmux.conf"
-alias vim="vim -S $CONFIG/vim/.vimrc"
+alias vim="vim -S $CONFIG/vim/vimrc"
 
 #Source files
 alias sa=". $CONFIG/sh/.alias"
