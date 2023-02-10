@@ -2,4 +2,4 @@
 	name = masoncowen
 	email = mason.owen36@gmail.com
 [credential]
-	helper = cache
+	helper = store
