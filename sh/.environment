@@ -7,8 +7,8 @@ ENV=$SH_CONFIG/.environment; export ENV
 ALIAS=$SH_CONFIG/.alias; export ALIAS
 FUNC=$SH_CONFIG/.function; export FUNC
 
-VIM_CONFIG=$CONFIG/vim/.vimrc; export VIM_CONFIG
-TMUX_CONFIG=$CONFIG/tmux/.tmux.conf; export TMUX_CONFIG
+VIM_CONFIG=$CONFIG/vim/vimrc; export VIM_CONFIG
+TMUX_CONFIG=$CONFIG/tmux/tmux.conf; export TMUX_CONFIG
 
 BROWSER="firefox"; export BROWSER
 
