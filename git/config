@@ -3,3 +3,9 @@
 	email = mason.owen36@gmail.com
 [credential]
 	helper = store
+[mergetool "cvimdiff"]
+  cmd = vim -S $VIM_CONFIG -f -d \
+    -c '4wincmd w | wincmd J' \
+    "$LOCAL" "$BASE" "$REMOTE" "$MERGED"
+[merge]
+	tool = cvimdiff
