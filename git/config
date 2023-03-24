@@ -16,3 +16,6 @@
 	st = status
 	a = add
 	d = diff
+	cm = commit
+	ps = push
+	pl = pull
