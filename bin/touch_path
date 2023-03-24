@@ -1,0 +1,3 @@
+#!/usr/bin/env perl
+use Path::Tiny;
+path($ARGV[0])->touchpath;
