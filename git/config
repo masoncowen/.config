@@ -9,3 +9,10 @@
     "$LOCAL" "$BASE" "$REMOTE" "$MERGED"
 [merge]
 	tool = cvimdiff
+[alias]
+	last = log -1 HEAD
+	cf = config
+	cfg = config --global
+	st = status
+	a = add
+	d = diff
