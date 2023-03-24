@@ -76,7 +76,7 @@ if ! empty(globpath(&rtp, 'autoload/plug.vim'))
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-endwise'
   Plug 'preservim/vim-markdown'
-  Plug 'vim-latex/vim-latex'
+  "Plug 'vim-latex/vim-latex'
   "Plug 'junegunn/fzf'
   "Plug 'junegunn/fzf.vim'
   "Plug 'michal-h21/vim-zettel'
