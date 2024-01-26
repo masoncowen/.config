@@ -1,9 +1,0 @@
-# About Me
-set from = "mason@mcowen.co.uk"
-set realname = "Mason Owen"
-
-# My credentials
-set smtp_url = "smtp://mason@mail.mcowen.co.uk:587/"
-set imap_user = "mason@mcowen.co.uk"
-# My mailboxes
-# set 
