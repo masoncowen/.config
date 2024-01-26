@@ -1,8 +1,4 @@
-alias ds='doas su -l'
-alias sg='doas su -l git'
-alias ga='git-all'
 alias ls='ls -F'
-alias ?='ddg'
 
 #Replace config files from home
 alias tmux="tmux -2 -f $TMUX_CONFIG"
@@ -13,17 +9,7 @@ alias sa=". $CONFIG/sh/.alias"
 alias sp=". $CONFIG/sh/.profile"
 
 #Single Letters
-alias d="doas"
 alias e=$EDITOR
 alias g="git"
 alias t="tmux"
 alias v=$VISUAL
-
-#Tmux commands
-alias tsl="tmux split-window -h less"
-
-#Rsync commands
-alias wpsh='rsync -vrutd ~/writing OT:.'
-alias wpll='rsync -vrutd OT:writing ~'
-alias cpsh='rsync -vrutd ~/config OT:.'
-alias cpll='rsync -vrutd OT:config ~'
