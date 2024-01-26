@@ -19,3 +19,4 @@
 	cm = commit
 	ps = push
 	pl = pull
+	pt = add -p
