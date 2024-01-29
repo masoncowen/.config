@@ -86,10 +86,11 @@ if ! empty(globpath(&rtp, 'autoload/plug.vim'))
   Plug 'tpope/vim-repeat'
   Plug 'svermeulen/vim-subversive'
   Plug 'tpope/vim-abolish'
-  Plug 'jiangmiao/auto-pairs'
+  " Plug 'jiangmiao/auto-pairs'
   Plug 'kurkale6ka/vim-pairs'
   Plug 'chrisbra/csv.vim'
   Plug 'tpope/vim-fugitive'
+  " Plug 'ziglang/zig.vim'
   call plug#end()
 else
   echo "vim-plug not installed"
@@ -165,10 +166,10 @@ nmap <silent> <leader>ssh :tab ter++close ssh MCO<cr>
 nmap <silent> <leader>ter :tab ter<cr>
 nmap <leader>b <c-^>
 "This is just because gt/gT is an annoying bigram on QWERTY
-nmap <leader>t gt
-nmap <leader>T gT
+nmap <leader>h <c-w>h
 nmap <leader>j <c-w>j
 nmap <leader>k <c-w>k
+nmap <leader>l <c-w>l
 nmap <leader>n :tabe<cr>
 nnoremap ,, ,
 nnoremap ,. ;
@@ -216,9 +217,9 @@ set foldtext=NeatFoldText()
 
 ""Python
 autocmd Filetype python nnoremap <buffer> <localleader>g :w<cr>:ter++close
-      \ python %<cr>
+      \ py %<cr>
 autocmd Filetype python nnoremap <buffer> <localleader>G :w<cr>:ter
-      \ python %<cr>
+      \ py %<cr>
 autocmd FileType python set shiftwidth=2 tabstop=2 softtabstop=2
 ""AutoHotKey
 autocmd Filetype autohotkey nnoremap <buffer> <localleader>g :w<cr>:ter++close 
@@ -228,10 +229,22 @@ autocmd Filetype perl nnoremap <buffer> <localleader>g :w<cr>:ter
       \C:\Users\mason.owen\Programs\StrawberryPerl\portableshell.bat %<cr>
 ""TeX"
 autocmd BufEnter *.tex cd %:h
-autocmd Filetype tex,plaintex nnoremap <buffer> <localleader>g :w<cr>:ter++close pdflatex -jobname output index<cr>
-autocmd Filetype tex,plaintex nnoremap <buffer> <localleader>v :ter++close C:\Users\mason.owen\Programs\SumatraPDF\SumatraPDF-3.4.6-64.exe output.pdf<cr>
-autocmd Filetype tex,plaintex nnoremap <buffer> <localleader>p :ter++close C:\Users\mason.owen\Programs\SumatraPDF\SumatraPDF-3.4.6-64.exe -print-to-default output.pdf<cr>
-autocmd Filetype tex,plaintex nnoremap <buffer> <localleader>G :w<cr>:ter pdflatex -jobname output index<cr>
+autocmd Filetype tex,plaintex nnoremap <buffer> <localleader>g
+      \ :w<cr>:ter++close pdflatex -jobname output index<cr>
+autocmd Filetype tex,plaintex nnoremap <buffer> <localleader>v
+      \ :ter++close C:\Users\mason.owen\Programs\SumatraPDF\SumatraPDF-3.4.6-64.exe output.pdf<cr>
+autocmd Filetype tex,plaintex nnoremap <buffer> <localleader>p
+      \ :ter++close C:\Users\mason.owen\Programs\SumatraPDF\SumatraPDF-3.4.6-64.exe -print-to-default output.pdf<cr>
+autocmd Filetype tex,plaintex nnoremap <buffer> <localleader>G
+      \ :w<cr>:ter pdflatex -jobname output index<cr>
+
+""Zig
+autocmd Filetype zig nnoremap <buffer> <localleader>g :w<cr>:ter++close
+      \ C:\\Users\\mason.owen\\.local\\bin\\zig-windows-x86_64-0.11.0\\zig.exe run %<cr>
+autocmd Filetype zig nnoremap <buffer> <localleader>G :w<cr>:ter
+      \ C:\\Users\\mason.owen\\.local\\bin\\zig-windows-x86_64-0.11.0\\zig.exe run %<cr>
+autocmd Filetype zig nnoremap <buffer> <localleader>f :w<cr>:ter
+      \ C:\\Users\\mason.owen\\.local\\bin\\zig-windows-x86_64-0.11.0\\zig.exe
 
 "Leaving this here for memories
 "nnoremap <leader>c :!viCompile ~/writing/diss/diss.tex <cr><cr>
