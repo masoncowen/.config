@@ -162,8 +162,9 @@ nmap <silent> <leader>r :cd $HOME<cr>:source $VIM_CONFIG<cr>:echo 'Reloaded'<cr>
 nmap <silent> <leader>R :cd $HOME<cr>:tab drop $VIM_CONFIG<cr>:w<cr>:source $VIM_CONFIG<cr>:echo 'Reloaded'<cr>
 nmap <silent> <leader>cf :tab drop $VIM_CONFIG<cr>
 nmap <silent> <leader>pl :Git pl<cr>
+nmap <silent> <leader>st :Git st %<cr>
+nmap <silent> <leader>ga :Git a %<cr>
 nmap <silent> <leader>pt :Git pt %<cr>
-nmap <silent> <leader>pa :Git pa %<cr>
 nmap <silent> <leader>cm :Git cm<cr>
 nmap <silent> <leader>ps :Git ps<cr>
 nmap <silent> <leader>ssh :tab ter++close ssh MCO<cr>
