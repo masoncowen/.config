@@ -148,34 +148,54 @@ function! InsertTabWrapper()
     return "\<c-n>"
   endif
 endfunction
-
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+" inoremap <localleader>j <C-n>
+" inoremap <localleader>k <C-p>
 "Leader mappings
-nnoremap <space> <nop>
+
 let mapleader=" "
-inoremap <localleader>j <C-n>
-inoremap <localleader>k <C-p>
-nmap <leader>s :w<cr>
-nmap <leader>z ZZ
-nmap <leader>q ZQ
 nmap <silent> <leader>r :cd $HOME<cr>:source $VIM_CONFIG<cr>:echo 'Reloaded'<cr>
 nmap <silent> <leader>R :cd $HOME<cr>:tab drop $VIM_CONFIG<cr>:w<cr>:source $VIM_CONFIG<cr>:echo 'Reloaded'<cr>
 nmap <silent> <leader>cf :tab drop $VIM_CONFIG<cr>
 nmap <silent> <leader>pl :Git pl<cr>
 nmap <silent> <leader>st :Git st %<cr>
-nmap <silent> <leader>ga :Git a %<cr>
+nmap <silent> <leader>a :Git a %<cr>
 nmap <silent> <leader>pt :Git pt %<cr>
 nmap <silent> <leader>cm :Git cm<cr>
 nmap <silent> <leader>ps :Git ps<cr>
+nmap <leader>b <c-^>
 nmap <silent> <leader>ssh :tab ter++close ssh MCO<cr>
 nmap <silent> <leader>t :ter<cr>
 nmap <silent> <leader>T :tab ter<cr>
-nmap <leader>b <c-^>
-nmap <leader>h <c-w>h
-nmap <leader>j <c-w>j
-nmap <leader>k <c-w>k
-nmap <leader>l <c-w>l
-nmap <leader>n :tabe<cr>
+"Windows and Tabs
+nmap <c-h> <c-w>h
+nmap <c-j> <c-w>j
+nmap <c-k> <c-w>k
+nmap <c-l> <c-w>l
+nmap H :lefta vsplit #<cr>
+nmap J :below split #<cr>
+nmap K :above split #<cr>
+nnoremap L :rightb vsplit #<cr>
+nmap <c-s-h> <c-w>H
+nmap <c-s-j> <c-w>J
+nmap <c-s-k> <c-w>K
+nmap <c-s-l> <c-w>L
+nmap <c-t> :tabe<cr>
+nmap <c-s-t> :tabe #<cr>
+tmap <c-t> <c-w>:tabe<cr>
+tmap <c-s-t> <c-w>:tabe #<cr>
+nmap <c-q> :q<cr>
+nmap <c-s-q> :q!<cr>
+nnoremap <c-.> gt
+nnoremap <c-,> gT
+tnoremap <c-.> <c-w>gt
+tnoremap <c-,> <c-w>gT
+
+"Ex-mode and command-line
+nmap Q <nop>
+nnoremap g: q:
+nnoremap g/ q/
+nnoremap <c-s-;> Q
 
 "File Specific
 ""Markdown
