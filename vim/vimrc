@@ -20,10 +20,7 @@ if has('win32')
         \ '\=eval(submatch(0)-7)',
         \ '')<CR>
 
-  let $HOME = "Q:\\Programs"
-  cd $HOME
   let $VIM_CONFIG = $HOME."\\.config\\vim\\vimrc"
-  let $NOTES = $HOME."\\Notes.md"
   let $PLUG = $VIM."\\plugged"
 else
   if has('unix')
@@ -96,6 +93,8 @@ else
   echo "vim-plug not installed"
 endif
 
+"Basic mappings
+nmap Y y$
 ""Subversive mappings
 nmap s <plug>(SubversiveSubstitute)
 nmap ss <plug>(SubversiveSubstituteLine)
@@ -106,9 +105,7 @@ syntax on
 set nu ruler
 set mouse=a
 set termguicolors
-"colorscheme desert
 colorscheme quantum
-"colorscheme hatsunemiku
 set scrolloff=5
 set colorcolumn=80
 
@@ -127,53 +124,52 @@ set noswapfile
 set nobackup nowritebackup
 set undodir=~/.vim/undodir undofile
 
-"Basic mappings
-nmap Y y$
-map <silent> !. !!sh<CR>
 
-"Autocomplete
-function! OmniPopup(action)
-  if pumvisible()
-    if a:action == 'j'
-      return "\<C-N>"
-    elseif a:action == 'k'
-      return "\<C-P>"
-    endif
+""Autocomplete
+"function! OmniPopup(action)
+"  if pumvisible()
+"    if a:action == 'j'
+"      return "\<C-N>"
+"    elseif a:action == 'k'
+"      return "\<C-P>"
+"    endif
+"  endif
+"  return a:action
+"endfunction
+
+" inoremap <silent>j <c-r>=OmniPopup('j')<cr>
+" inoremap <silent>k <c-r>=OmniPopup('k')<cr>
+"
+function! InsertTabWrapper()
+  let col = col('.') - 1
+  if !col || getline('.')[col - 1] !~ '\k'
+    return "\<tab>"
+  else
+    return "\<c-n>"
   endif
-  return a:action
 endfunction
-inoremap <silent>j <c-r>=OmniPopup('j')<cr>
-inoremap <silent>k <c-r>=OmniPopup('k')<cr>
 
+inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 "Leader mappings
+nnoremap <space> <nop>
 let mapleader=" "
-let maplocalleader=";"
-"Insert mode
-inoremap <localleader> <nop>
-inoremap <localleader><localleader> ;
-inoremap <localleader><leader> <esc>
 inoremap <localleader>j <C-n>
 inoremap <localleader>k <C-p>
-inoremap <localleader>v <C-r>+
 nmap <leader>s :w<cr>
 nmap <leader>z ZZ
 nmap <leader>q ZQ
 nmap <silent> <leader>r :cd $HOME<cr>:source $VIM_CONFIG<cr>:echo 'Reloaded'<cr>
 nmap <silent> <leader>R :cd $HOME<cr>:tab drop $VIM_CONFIG<cr>:w<cr>:source $VIM_CONFIG<cr>:echo 'Reloaded'<cr>
 nmap <silent> <leader>cf :tab drop $VIM_CONFIG<cr>
-nmap <silent> <leader>md :tab drop $NOTES<cr>
 nmap <silent> <leader>ssh :tab ter++close ssh MCO<cr>
-nmap <silent> <leader>ter :tab ter<cr>
+nmap <silent> <leader>t :ter<cr>
+nmap <silent> <leader>T :tab ter<cr>
 nmap <leader>b <c-^>
-"This is just because gt/gT is an annoying bigram on QWERTY
 nmap <leader>h <c-w>h
 nmap <leader>j <c-w>j
 nmap <leader>k <c-w>k
 nmap <leader>l <c-w>l
 nmap <leader>n :tabe<cr>
-nnoremap ,, ,
-nnoremap ,. ;
-nnoremap <leader>. ;.
 
 "File Specific
 ""Markdown
@@ -185,10 +181,6 @@ function! MarkdownLevel()
     return ">" . len(h)
   endif
 endfunction
-
-iab <expr> dts~ strftime('%c')
-iab <expr> tab~ normal >>
-iab call~ -<space>Time:<space>dts~<return><tab>-<space>Caller:<space><return><tab>-<space>Items:<space><return><tab><tab>-<space>
 
 autocmd BufEnter * if &filetype == "" | setlocal ft=markdown | endif
 let g:vim_markdown_math = 1
@@ -216,35 +208,35 @@ endfunction
 set foldtext=NeatFoldText()
 
 ""Python
-autocmd Filetype python nnoremap <buffer> <localleader>g :w<cr>:ter++close
+autocmd Filetype python nnoremap <buffer> <leader>g :w<cr>:ter++close
       \ py %<cr>
-autocmd Filetype python nnoremap <buffer> <localleader>G :w<cr>:ter
+autocmd Filetype python nnoremap <buffer> <leader>G :w<cr>:ter
       \ py %<cr>
 autocmd FileType python set shiftwidth=2 tabstop=2 softtabstop=2
 ""AutoHotKey
-autocmd Filetype autohotkey nnoremap <buffer> <localleader>g :w<cr>:ter++close 
+autocmd Filetype autohotkey nnoremap <buffer> <leader>g :w<cr>:ter++close 
       \autohotkey %<cr>
 ""Perl
-autocmd Filetype perl nnoremap <buffer> <localleader>g :w<cr>:ter 
+autocmd Filetype perl nnoremap <buffer> <leader>g :w<cr>:ter 
       \C:\Users\mason.owen\Programs\StrawberryPerl\portableshell.bat %<cr>
 ""TeX"
 autocmd BufEnter *.tex cd %:h
-autocmd Filetype tex,plaintex nnoremap <buffer> <localleader>g
+autocmd Filetype tex,plaintex nnoremap <buffer> <leader>g
       \ :w<cr>:ter++close pdflatex -jobname output index<cr>
-autocmd Filetype tex,plaintex nnoremap <buffer> <localleader>v
-      \ :ter++close C:\Users\mason.owen\Programs\SumatraPDF\SumatraPDF-3.4.6-64.exe output.pdf<cr>
-autocmd Filetype tex,plaintex nnoremap <buffer> <localleader>p
-      \ :ter++close C:\Users\mason.owen\Programs\SumatraPDF\SumatraPDF-3.4.6-64.exe -print-to-default output.pdf<cr>
-autocmd Filetype tex,plaintex nnoremap <buffer> <localleader>G
+" autocmd Filetype tex,plaintex nnoremap <buffer> <leader>v
+"       \ :ter++close C:\Users\mason.owen\Programs\SumatraPDF\SumatraPDF-3.4.6-64.exe output.pdf<cr>
+" autocmd Filetype tex,plaintex nnoremap <buffer> <leader>p
+"       \ :ter++close C:\Users\mason.owen\Programs\SumatraPDF\SumatraPDF-3.4.6-64.exe -print-to-default output.pdf<cr>
+autocmd Filetype tex,plaintex nnoremap <buffer> <leader>G
       \ :w<cr>:ter pdflatex -jobname output index<cr>
 
 ""Zig
-autocmd Filetype zig nnoremap <buffer> <localleader>g :w<cr>:ter++close
-      \ C:\\Users\\mason.owen\\.local\\bin\\zig-windows-x86_64-0.11.0\\zig.exe run %<cr>
-autocmd Filetype zig nnoremap <buffer> <localleader>G :w<cr>:ter
-      \ C:\\Users\\mason.owen\\.local\\bin\\zig-windows-x86_64-0.11.0\\zig.exe run %<cr>
-autocmd Filetype zig nnoremap <buffer> <localleader>f :w<cr>:ter
-      \ C:\\Users\\mason.owen\\.local\\bin\\zig-windows-x86_64-0.11.0\\zig.exe
+" autocmd Filetype zig nnoremap <buffer> <leader>g :w<cr>:ter++close
+"       \ C:\\Users\\mason.owen\\.local\\bin\\zig-windows-x86_64-0.11.0\\zig.exe run %<cr>
+" autocmd Filetype zig nnoremap <buffer> <leader>G :w<cr>:ter
+"       \ C:\\Users\\mason.owen\\.local\\bin\\zig-windows-x86_64-0.11.0\\zig.exe run %<cr>
+" autocmd Filetype zig nnoremap <buffer> <leader>f :w<cr>:ter
+"       \ C:\\Users\\mason.owen\\.local\\bin\\zig-windows-x86_64-0.11.0\\zig.exe
 
 "Leaving this here for memories
 "nnoremap <leader>c :!viCompile ~/writing/diss/diss.tex <cr><cr>
