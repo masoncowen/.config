@@ -20,3 +20,4 @@
 	ps = push
 	pl = pull
 	pt = add -p
+	alias = ! git config --get-regexp '^alias\\.' | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
