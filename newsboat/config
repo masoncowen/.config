@@ -1,0 +1,9 @@
+browser "open -a firefox %u"
+bind-key j down
+bind-key k up
+bind-key l open
+bind-key RIGHT open
+bind-key h quit
+bind-key LEFT quit
+bind-key z toggle-show-read-feeds
+prepopulate-query-feeds yes
