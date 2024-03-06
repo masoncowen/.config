@@ -119,37 +119,8 @@ set noswapfile
 set nobackup nowritebackup
 set undodir=~/.vim/undodir undofile
 
-
-""Autocomplete
-"function! OmniPopup(action)
-"  if pumvisible()
-"    if a:action == 'j'
-"      return "\<C-N>"
-"    elseif a:action == 'k'
-"      return "\<C-P>"
-"    endif
-"  endif
-"  return a:action
-"endfunction
-
-" inoremap <silent>j <c-r>=OmniPopup('j')<cr>
-" inoremap <silent>k <c-r>=OmniPopup('k')<cr>
-"
 "Basic mappings
 nmap Y y$
-
-"Autocomplete
-function! InsertTabWrapper()
-  let col = col('.') - 1
-  if !col || getline('.')[col - 1] !~ '\k'
-    return "\<tab>"
-  else
-    return "\<c-n>"
-  endif
-endfunction
-inoremap <tab> <c-r>=InsertTabWrapper()<cr>
-" inoremap <localleader>j <C-n>
-" inoremap <localleader>k <C-p>
 
 ""Subversive mappings
 nmap s <plug>(SubversiveSubstitute)

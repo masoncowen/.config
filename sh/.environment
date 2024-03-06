@@ -13,4 +13,4 @@ TMUX_CONFIG=$CONFIG/tmux/tmux.conf; export TMUX_CONFIG
 BROWSER="firefox"; export BROWSER
 
 EDITOR=ex; export EDITOR
-VISUAL="vim"; export VISUAL
+VISUAL="vim -S $VIM_CONFIG"; export VISUAL

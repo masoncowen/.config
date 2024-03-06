@@ -15,8 +15,6 @@ PROMPT="%{$(tput setaf 39)%}%n%{$(tput setaf 73)%}@%{$(tput setaf 115)%}%m %{$(t
 
 #Other
 PATH="$PATH:$CONFIG/bin"
-PATH="$PATH:~/zig"
 set -o vi
 transset-df -a .75
 clear
-export TASKDDATA=/var/taskd
