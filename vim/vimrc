@@ -202,6 +202,12 @@ if expand('%:~') =~# '^\~\/writing'
   au VimEnter,BufEnter *.md setlocal path+=~/writing,~/writing/daily,~/writing/people
   au VimEnter,BufEnter *.md setlocal suffixesadd=.md
 endif
+if expand('%:~') =~# '^\~\/fiction'
+  let start_hour = strftime("%H")
+  let start_min = strftime("%M")
+  set laststatus=2
+  set statusline=%{wordcount().words-7}\ \/\ 2000\ words\ (%{strftime('%H')*60+strftime('%M')-start_hour*60-start_min}\ mins)
+endif
 function! NeatFoldText()
     let line = ' ' . substitute(getline(v:foldstart), '^\s*"\?\s*\|\s*"\?\s*{{' . '{\d*\s*', '', 'g') . ' '
     let lines_count = v:foldend - v:foldstart + 1
