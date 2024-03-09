@@ -32,14 +32,15 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCHYoe8kQ-7Gn9ASOlmI0k6Q cur
 
 #https://www.youtube.com/feeds/videos.xml?channel_id=UCbRP3c757lWg9M-U7TyEkXA ! youtube programming #Theo - t3.gg
 https://www.youtube.com/feeds/videos.xml?channel_id=UC6CEsZWlyqj0p2e6N_GvF1w current youtube programming #Brook Jeynes
-"query:Primeagen:tags # \"primeagen\"" current youtube primeagen
-https://www.youtube.com/feeds/videos.xml?channel_id=UCUyeluBRhGPCW4rPe_UvBZQ ! current youtube programming primeagen #ThePrimeTime
-https://www.youtube.com/feeds/videos.xml?channel_id=UCVk4b-svNJoeytrrlOixebQ ! current youtube programming primeagen #TheVimeagen
+#"query:Primeagen:tags # \"primeagen\"" current youtube primeagen
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCUyeluBRhGPCW4rPe_UvBZQ ! current youtube programming primeagen #ThePrimeTime
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCVk4b-svNJoeytrrlOixebQ ! current youtube programming primeagen #TheVimeagen
 
 https://www.youtube.com/feeds/videos.xml?channel_id=UCodbH5mUeF-m_BsNueRDjcw current youtube #Overly Sarcastic Productions
 "query:History Summarized:title =~ \"^History.*Summarized\"" current youtube
 "query:Trope Talk:title =~ \"^Trope Talk\"" current youtube
 "query:Miscellaneous Myths:title =~ \"^Miscellaneous Myths\"" current youtube
+"query:Detail Diatribe:title =~ \"^Detail Diatribe\"" current youtube
 
 "query:Video Essays:(tags # \"videoessay\") and (unread = \"yes\") and (tags # \"current\") and (tags !# \"trial\")" current youtube videoessay
 https://www.youtube.com/feeds/videos.xml?channel_id=UCHu6yK2Ht1J7lfvYBXv0OsQ ! current youtube videoessay nebula #Lily Alexandre
@@ -52,17 +53,17 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCqNpjt_UcMPgm_9gphZgHYA ! c
 https://www.youtube.com/feeds/videos.xml?channel_id=UC32w6uX5qtmUtF4QQQ2PKaQ ! "~Hermitcraft Recap" current youtube hermitcraft #Hermitcraft Recap
 https://www.youtube.com/feeds/videos.xml?channel_id=UCFKDEp9si4RmHFWJW1vYsMA current youtube hermitcraft #Ethoslab
 https://www.youtube.com/feeds/videos.xml?channel_id=UCR9Gcq0CMm6YgTzsDxAxjOQ ! current youtube hermitcraft #Grian
-https://www.youtube.com/feeds/videos.xml?channel_id=UCUBsjvdHcwZd3ztdY1Zadcw ! current youtube hermitcraft #GeminiTay
 https://www.youtube.com/feeds/videos.xml?channel_id=UC4O9HKe9Jt5yAhKuNv3LXpQ ! current youtube hermitcraft #docm77
+https://www.youtube.com/feeds/videos.xml?channel_id=UCUBsjvdHcwZd3ztdY1Zadcw ! current youtube hermitcraft #GeminiTay
 https://www.youtube.com/feeds/videos.xml?channel_id=UC1GJ5aeqpEWklMBQ3oXrPQQ ! current youtube hermitcraft #PearlescentMoon
 https://www.youtube.com/feeds/videos.xml?channel_id=UC4qdHN4zHhd4VvNy3zNgXPA ! current youtube hermitcraft #SmallishBeans
 https://www.youtube.com/feeds/videos.xml?channel_id=UClu2e7S8atp6tG2galK9hgg ! current youtube hermitcraft #BdoubleO100
-https://www.youtube.com/feeds/videos.xml?channel_id=UChFur_NwVSbUozOcF_F2kMg ! current youtube hermitcraft #Mumbo Jumbo
-https://www.youtube.com/feeds/videos.xml?channel_id=UCU9pX8hKcrx06XfOB-VQLdw ! current youtube hermitcraft #xisumavoid
 https://www.youtube.com/feeds/videos.xml?channel_id=UC4YUKOBld2PoOLzk0YZ80lw ! current youtube hermitcraft #Tango Tek
 https://www.youtube.com/feeds/videos.xml?channel_id=UCodkNmk9oWRTIYZdr_HuSlg ! current youtube hermitcraft #GoodTimesWithScar
 https://www.youtube.com/feeds/videos.xml?channel_id=UCZ9x-z3iOnIbJxVpm1rsu2A ! current youtube hermitcraft #iskall85
 https://www.youtube.com/feeds/videos.xml?channel_id=UCpJU1leLsnhl53KUfy5nAzQ ! current youtube hermitcraft #vodskall85
+https://www.youtube.com/feeds/videos.xml?channel_id=UChFur_NwVSbUozOcF_F2kMg ! current youtube hermitcraft #Mumbo Jumbo
+https://www.youtube.com/feeds/videos.xml?channel_id=UCU9pX8hKcrx06XfOB-VQLdw ! current youtube hermitcraft #xisumavoid
 #https://www.youtube.com/feeds/videos.xml?channel_id=UCPK5G4jeoVEbUp5crKJl6CQ ! current youtube hermitcraft #ZedaphPlays
 #https://www.youtube.com/feeds/videos.xml?channel_id=UCYdXHOv7srjm-ZsNsTcwbBw ! youtube hermitcraft #MCSkizzleman
 #https://www.youtube.com/feeds/videos.xml?channel_id=UCuMJPFqazQI4SofSFEd-5zA ! youtube hermitcraft #impulseSV
