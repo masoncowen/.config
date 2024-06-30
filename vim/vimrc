@@ -227,6 +227,11 @@ autocmd Filetype python nnoremap <buffer> <leader>gc :w<cr>:ter++close py %<cr>
 autocmd Filetype python nnoremap <buffer> <leader>go :w<cr>:ter py %<cr>
 autocmd Filetype python nnoremap <buffer> <leader>gt :w<cr>:tab ter py %<cr>
 autocmd FileType python set shiftwidth=2 tabstop=2 softtabstop=2
+""Go
+autocmd Filetype go nnoremap <buffer> <leader>gc :w<cr>:ter++close go run %<cr>
+autocmd Filetype go nnoremap <buffer> <leader>go :w<cr>:ter go run %<cr>
+autocmd Filetype go nnoremap <buffer> <leader>gt :w<cr>:tab ter go run %<cr>
+autocmd FileType go set shiftwidth=2 tabstop=2 softtabstop=2
 ""AutoHotKey
 autocmd Filetype autohotkey nnoremap <buffer> <leader>g :w<cr>:ter++close 
       \autohotkey %<cr>
