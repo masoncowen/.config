@@ -264,13 +264,14 @@ autocmd Filetype tex,plaintex nnoremap <buffer> <leader>g
 autocmd Filetype tex,plaintex nnoremap <buffer> <leader>G
       \ :w<cr>:ter pdflatex -jobname output index<cr>
 
-""Zig
-" autocmd Filetype zig nnoremap <buffer> <leader>g :w<cr>:ter++close
-"       \ C:\\Users\\mason.owen\\.local\\bin\\zig-windows-x86_64-0.11.0\\zig.exe run %<cr>
-" autocmd Filetype zig nnoremap <buffer> <leader>G :w<cr>:ter
-"       \ C:\\Users\\mason.owen\\.local\\bin\\zig-windows-x86_64-0.11.0\\zig.exe run %<cr>
-" autocmd Filetype zig nnoremap <buffer> <leader>f :w<cr>:ter
-"       \ C:\\Users\\mason.owen\\.local\\bin\\zig-windows-x86_64-0.11.0\\zig.exe
+"Zig
+ autocmd Filetype zig autocmd! vim-zig BufWrite
+ autocmd Filetype zig nnoremap <buffer> <leader>g :w<cr>:ter++close
+       \ C:\\Users\\mason.owen\\.local\\bin\\zig-windows-x86_64-0.13.0\\zig.exe build run<cr>
+ autocmd Filetype zig nnoremap <buffer> <leader>go :w<cr>:ter
+       \ C:\\Users\\mason.owen\\.local\\bin\\zig-windows-x86_64-0.13.0\\zig.exe build run<cr>
+ autocmd Filetype zig nnoremap <buffer> <leader>f :w<cr>:ter
+       \ C:\\Users\\mason.owen\\.local\\bin\\zig-windows-x86_64-0.13.0\\zig.exe
 
 "Leaving this here for memories
 "nnoremap <leader>c :!viCompile ~/writing/diss/diss.tex <cr><cr>
