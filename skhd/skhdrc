@@ -1,0 +1,14 @@
+alt + cmd - j : yabai -m window --focus south
+alt + cmd - k : yabai -m window --focus north
+alt + cmd - h : yabai -m window --focus west
+alt + cmd - l : yabai -m window --focus east
+shift + cmd - f : yabai -m window --toggle zoom-fullscreen
+shift + cmd - e : yabai -m space --balance
+shift + cmd - h : yabai -m window --toggle float --grid 1:2:0:0:1:1
+shift + cmd - l : yabai -m window --toggle float --grid 1:2:1:0:1:1
+shift + cmd - j : yabai -m window --toggle float --grid 2:1:0:1:1:1
+shift + cmd - k : yabai -m window --toggle float --grid 2:1:0:0:1:1
+alt + cmd  - f : yabai -m window --toggle float --grid 7:10:1:0:8:6
+shift + alt + cmd - f : yabai -m window --toggle float --grid 5:1:0:4:1:2
+alt + cmd - v : yabai -m window --toggle float --grid 34:28:1:0:26:32
+alt + shift + cmd - v : yabai -m window --toggle float --grid 15:1:0:14:1:2

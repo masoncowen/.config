@@ -13,3 +13,6 @@ alias e=$EDITOR
 alias g="git"
 alias t="tmux"
 alias v=$VISUAL
+
+#Local Aliases
+alias ccl="./create_cover_letter"

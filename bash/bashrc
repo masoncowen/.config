@@ -1,0 +1,3 @@
+UNAME="$(uname -n)"
+PS1="<\033[36;1m$LOGNAME\033[0m@\033[36;1m$UNAME\033[0m:\033[32;1m\W\033[0m> "
+source $CONFIG/sh/profile

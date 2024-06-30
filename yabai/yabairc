@@ -1,0 +1,16 @@
+yabai -m config \
+  layout bsp \
+  window_placement second_child \
+  top_padding 6 \
+  bottom_padding 12 \
+  left_padding 12 \
+  right_padding 12 \
+  window_gap 12 \
+  mouse_follows_focus on \
+  window_opacity on \
+  active_window_opacity 1.0 \
+  normal_window_opacity 0.5 \
+  auto_balance off
+
+yabai -m rule --add app="^Raycast$" manage=off
+yabai -m rule --add app="^System Preferences$" manage=off
