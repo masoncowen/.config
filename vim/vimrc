@@ -88,7 +88,8 @@ if ! empty(globpath(&rtp, 'autoload/plug.vim'))
   Plug 'kurkale6ka/vim-pairs'
   Plug 'chrisbra/csv.vim'
   Plug 'tpope/vim-fugitive'
-  Plug 'ziglang/zig.vim'
+  " Plug 'ziglang/zig.vim'
+  Plug 'yegappan/lsp'
   call plug#end()
 else
   echo "vim-plug not installed"
@@ -222,16 +223,35 @@ function! NeatFoldText()
 endfunction
 set foldtext=NeatFoldText()
 
+"""LSP and Languages
+let lspOpts = #{autoHighlightDiags: v:true}
+autocmd User LspSetup call LspOptionsSet(lspOpts)
 ""Python
 autocmd Filetype python nnoremap <buffer> <leader>gc :w<cr>:ter++close py %<cr>
 autocmd Filetype python nnoremap <buffer> <leader>go :w<cr>:ter py %<cr>
 autocmd Filetype python nnoremap <buffer> <leader>gt :w<cr>:tab ter py %<cr>
 autocmd FileType python set shiftwidth=2 tabstop=2 softtabstop=2
+let lspServers = [#{
+	\    name: 'pylang',
+	\    filetype: ['py', 'pym'],
+	\    path: '/usr/local/bin/pylsp',
+	\    args: [],
+	\    syncInit: v:true
+	\  }]
+autocmd User LspSetup call LspAddServer(lspServers)
 ""Go
 autocmd Filetype go nnoremap <buffer> <leader>gc :w<cr>:ter++close go run %<cr>
 autocmd Filetype go nnoremap <buffer> <leader>go :w<cr>:ter go run %<cr>
 autocmd Filetype go nnoremap <buffer> <leader>gt :w<cr>:tab ter go run %<cr>
 autocmd FileType go set shiftwidth=2 tabstop=2 softtabstop=2
+let lspServers = [#{
+	\    name: 'golang',
+	\    filetype: ['go', 'gomod'],
+	\    path: '/usr/local/bin/gopls',
+	\    args: ['serve'],
+	\    syncInit: v:true
+	\  }]
+autocmd User LspSetup call LspAddServer(lspServers)
 ""AutoHotKey
 autocmd Filetype autohotkey nnoremap <buffer> <leader>g :w<cr>:ter++close 
       \autohotkey %<cr>
