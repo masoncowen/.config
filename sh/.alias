@@ -2,7 +2,7 @@ alias ls='ls -F'
 
 #Replace config files from home
 alias tmux="tmux -2 -f $TMUX_CONFIG"
-alias vim="vim -S $VIM_CONFIG"
+alias vim="$VISUAL"
 
 #Source files
 alias sa=". $CONFIG/sh/.alias"
@@ -13,3 +13,6 @@ alias e=$EDITOR
 alias g="git"
 alias t="tmux"
 alias v=$VISUAL
+
+#Local Aliases
+alias ccl="./create_cover_letter"

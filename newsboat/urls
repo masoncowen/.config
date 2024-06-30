@@ -1,0 +1,127 @@
+"query:Current:(tags # \"current\") and (unread = \"yes\") and (tags !# \"trial\")" current
+https://www.youtube.com/feeds/videos.xml?channel_id=UCONd1SNf3_QqjzjCVsURNuA current youtube terrarium #AntsCanada
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCaiVt4r6YLPzJVgr7pOmD6w current youtube reaction #Aba N Preach
+https://www.youtube.com/feeds/videos.xml?channel_id=UC0intLFzLaudFG-xAvUEO-A current youtube nebula environment cityplanning #Not Just Bikes
+https://www.youtube.com/feeds/videos.xml?channel_id=UCuVLG9pThvBABcYCm7pkNkA current youtube nebula environment cityplanning #Climate Town
+https://www.youtube.com/feeds/videos.xml?channel_id=UC1OLx7nzJgIqwpDzFFrTuLA current youtube environment #Mossy Earth
+https://www.youtube.com/feeds/videos.xml?channel_id=UClHVl2N3jPEbkNJVx-ItQIQ current youtube mentalhealth adhd #HealthyGamerGG
+https://www.youtube.com/feeds/videos.xml?channel_id=UCH18915fTE6yZzKrqdea8RQ current youtube ecology biology science animals #Clint's Reptiles
+
+https://www.youtube.com/feeds/videos.xml?channel_id=UCodbH5mUeF-m_BsNueRDjcw current youtube #Overly Sarcastic Productions
+"query:History Summarized:title =~ \"^History.*Summarized\"" current youtube
+"query:Trope Talk:title =~ \"^Trope Talk\"" current youtube
+"query:Miscellaneous Myths:title =~ \"^Miscellaneous Myths\"" current youtube
+"query:Detail Diatribe:title =~ \"^Detail Diatribe\"" current youtube
+
+"query:日本語:(tags # \"nihongo\") and (tags # \"current\") and (tags !# \"trial\")" current youtube nihongo
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCgG7oz-Oq-7Etn0_bz0WimQ current youtube nihongo
+https://www.youtube.com/feeds/videos.xml?channel_id=UCeKUWJFqZa7rR4G_NLnV_9g current youtube nihongo #Yunaty
+https://www.youtube.com/feeds/videos.xml?channel_id=UCUApURCve0BEqv6Sa9x_OJg current youtube nihongo #my channel
+https://www.youtube.com/feeds/videos.xml?channel_id=UCaak9sggUeIBPOd8iK_BXcQ current youtube nihongo #Kimagure Cook
+https://www.youtube.com/feeds/videos.xml?channel_id=UCPiQ_mEXdEbB-3Yhiq7gq5w current youtube nihongo #Watercolour by Shibasaki
+
+"query:Video Essays:(tags # \"videoessay\") and (tags # \"current\") and (tags !# \"trial\")" current youtube videoessay
+https://www.youtube.com/feeds/videos.xml?channel_id=UCHu6yK2Ht1J7lfvYBXv0OsQ ! current youtube videoessay nebula #Lily Alexandre
+https://www.youtube.com/feeds/videos.xml?channel_id=UCecF2icZlEIJ__9XS6woPGw ! current youtube videoessay #Zoe Bee
+https://www.youtube.com/feeds/videos.xml?channel_id=UC6LEH0rS9V0BF5aNhVYdykQ ! current youtube videoessay #CJ The X
+https://www.youtube.com/feeds/videos.xml?channel_id=UCqNpjt_UcMPgm_9gphZgHYA ! current youtube videoessay #münecat
+https://www.youtube.com/feeds/videos.xml?channel_id=UC2PA-AKmVpU6NKCGtZq_rKQ ! current youtube videoessay nebula #Philosophy Tube
+
+"query:Hermitcraft:(tags # \"hermitcraft\") and (tags # \"current\")" current youtube hermitcraft 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCFKDEp9si4RmHFWJW1vYsMA current youtube hermitcraft #Ethoslab
+https://www.youtube.com/feeds/videos.xml?channel_id=UC4O9HKe9Jt5yAhKuNv3LXpQ ! current youtube hermitcraft #docm77
+https://www.youtube.com/feeds/videos.xml?channel_id=UCR9Gcq0CMm6YgTzsDxAxjOQ ! current youtube hermitcraft #Grian
+https://www.youtube.com/feeds/videos.xml?channel_id=UC4YUKOBld2PoOLzk0YZ80lw ! current youtube hermitcraft #Tango Tek
+https://www.youtube.com/feeds/videos.xml?channel_id=UCUBsjvdHcwZd3ztdY1Zadcw ! current youtube hermitcraft #GeminiTay
+https://www.youtube.com/feeds/videos.xml?channel_id=UClu2e7S8atp6tG2galK9hgg ! current youtube hermitcraft #BdoubleO100
+https://www.youtube.com/feeds/videos.xml?channel_id=UC1GJ5aeqpEWklMBQ3oXrPQQ ! current youtube hermitcraft #PearlescentMoon
+# https://www.youtube.com/feeds/videos.xml?channel_id=UChFur_NwVSbUozOcF_F2kMg ! current youtube hermitcraft #Mumbo Jumbo
+#https://www.youtube.com/feeds/videos.xml?channel_id=UC32w6uX5qtmUtF4QQQ2PKaQ ! "~Hermitcraft Recap" current youtube hermitcraft #Hermitcraft Recap
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCodkNmk9oWRTIYZdr_HuSlg ! current youtube hermitcraft #GoodTimesWithScar
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCZ9x-z3iOnIbJxVpm1rsu2A ! current youtube hermitcraft #iskall85
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCpJU1leLsnhl53KUfy5nAzQ ! current youtube hermitcraft #vodskall85
+#https://www.youtube.com/feeds/videos.xml?channel_id=UC4qdHN4zHhd4VvNy3zNgXPA ! current youtube hermitcraft #SmallishBeans
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCU9pX8hKcrx06XfOB-VQLdw ! current youtube hermitcraft #xisumavoid
+
+#"query:Gaming:(tags # \"gaming\") and (unread = \"yes\") and (tags # \"current\") and (tags !# \"trial\")" current youtube gaming 
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCs-w7E2HZWwXmjt9RTvBB_A ! youtube gaming #Settled
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCtUbO6rBht0daVIOGML3c8w ! youtube gaming #Summoning Salt
+##https://www.youtube.com/feeds/videos.xml?channel_id=UCyfAncW8U5ih8ptObV21G-w ! youtube gaming #pChal Daily
+#https://www.youtube.com/feeds/videos.xml?channel_id=UC0eOlAEMdVgpmThPkpmR-qQ ! current youtube gaming #Valefisk
+###https://www.youtube.com/feeds/videos.xml?channel_id=UCBODyKF0JMbUd6D9Bklyzbw ! current youtube gaming #Alpharad
+#https://www.youtube.com/feeds/videos.xml?channel_id=UClyGlKOhDUooPJFy4v_mqPg ! current youtube gaming #DougDoug
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCuvSqzfO_LV_QzHdmEj84SQ ! youtube gaming programming #Kaze Emanuar
+##https://www.youtube.com/feeds/videos.xml?channel_id=UCDiznUV6dtdB9PQj__XVhnA ! current youtube gaming #Two Much Grian
+##https://www.youtube.com/feeds/videos.xml?channel_id=UC0VVYtw21rg2cokUystu2Dw ! youtube gaming #Smallant
+##https://www.youtube.com/feeds/videos.xml?channel_id=UCBLeRcaN9Xvm8C0f3v732lQ ! current gaming youtube #TheRileyC
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCRC6cNamj9tYAO6h_RXd5xA ! current gaming youtube #RTGame
+
+#"query:Trialing:(tags # \"trial\") and (unread = \"yes\")" current youtube trial 
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCMjlDOf0UO9wSijFqPE9wBw ! current trial youtube
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCDAFuIcy1sKf9AuPbuO1TgQ ! current trial youtube gaming #Timber
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCtscFf8VayggrDYjOwDke_Q ! current trial youtube
+#https://www.youtube.com/feeds/videos.xml?channel_id=UC7_gcs09iThXybpVgjHZ_7g ! current trial youtube
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCN__G2hSqRKuqedN3M0JCDg ! current trial youtube
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCOTgNyfQG4vVP5sCXrJaS4g ! current trial youtube
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCcBaDcVabV0r0V4P8nrSqqg ! current trial youtube
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCgqt1RE0k0MIr0LoyJRy2lg ! current trial youtube
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCEszlI8-W79IsU8LSAiRbDg ! current trial youtube
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCZYTClx2T1of7BRZ86-8fow ! current trial youtube
+##https://www.youtube.com/feeds/videos.xml?channel_id=UCoydhtfFSk1fZXNRnkGnneQ ! trial youtube #ESOTERICA
+#https://www.youtube.com/feeds/videos.xml?channel_id=UC5pWjSetrqTg7BWwclunyGA ! current trial youtube
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCZnTTlJFl3dNLvLHVHeH2iA ! current trial youtube
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCdIQW5tfpES5Ll0kTMibDIA ! current trial youtube
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCrgnApFd_50jzl_nB7jv4xA ! current trial youtube
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCacXUKFJHYXrMgapWaKEGCg ! current trial youtube
+#https://www.youtube.com/feeds/videos.xml?channel_id=UC2_JOhJf-VAQm5VRqjY40Rw ! current trial youtube
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCJHM5IJ44__fkOxkD4vxoBw ! current trial youtube
+#https://www.youtube.com/feeds/videos.xml?channel_id=UC6QFT2c2MJxID-vxHDeX9XQ ! current trial youtube
+##https://www.youtube.com/feeds/videos.xml?channel_id=UCVls1GmFKf6WlTraIb_IaJg ! current trial youtube #DistroTube
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCQkd05iAYed2-LOmhjzDG6g ! current trial youtube
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCY6DpwQetygtye7GM1zVHmw ! current trial youtube
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCrc2iv2-G1FZ3VscM3zu2jg ! current trial youtube
+#https://www.youtube.com/feeds/videos.xml?channel_id=UC57gLBfdhN1zWMLmiW2Ya6Q ! current trial youtube
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCRRr_xrOm66qaigIbwFLvbQ ! current trial youtube
+#https://www.youtube.com/feeds/videos.xml?channel_id=UC11UNLQ4llwQawajUsCmneA ! trial current youtube alchemy #Fraser Builds
+#https://www.youtube.com/feeds/videos.xml?channel_id=UC-SrCCzkGq0wmSAuRs7EBFg ! trial current youtube archaeology #Miniminuteman
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCSwwoUNvQWgZDC8a_O6Qs_A ! trial current youtube videoessay #Kaz Rowe
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCweDKPSF65wRw5VHFUJYiow ! trial current youtube
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCct9aR7HC79Cv2g-9oDOTLw ! trial current youtube
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCZ0SVCRcqjhjU2b_lP_dI3w ! trial current youtube
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCTeYrzSQ3YCp3RovGH4y8Ew ! trial current youtube cityplanning #Strong Towns
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCKBUeKsqzKWSxp4pahxljBw ! trial current youtube
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCqoGR_EedlhKDVuWNwYWRbg ! trial current youtube #Voices of the Past
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCC_S5oOAJp0iaF4fDT3QS0g ! trial current youtube videoessay #verilybitchie
+#https://www.youtube.com/feeds/videos.xml?channel_id=UC2ME6cK8jWnRSWyUdV0yWJw ! trial current youtube videoessay #Alexander Avila
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCqpg8i6CryfkIw0uqytHsow ! trial current youtube videoessay #Elliot Sang
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCftSbpEaMtTWcaFnvjwCvXw ! trial current youtube productivity #Rian Doris
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCxr2d4As312LulcajAkKJYw ! trial current youtube history #Townsend
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCD25pu-XyVbiuQNGLvctHDw ! trial current youtube cooking vegan #Hermann
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCLA-PoQkSsIP6wWP0PUzFgQ ! trial current youtube histroy #Historia Militia
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCIAQuWY4lfGn8xArU_hG-dw ! trial current youtube videoessay #Quinn Henry
+#"query:TLDR News:(tags # \"tldr\") and (unread = \"yes\") and (tags # \"current\")" ! current youtube tldr trial
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCSMqateX8OA2s1wsOR2EgJA ! current youtube trial tldr 
+#https://www.youtube.com/feeds/videos.xml?channel_id=UC-eegKVWEgBCa4OzjnK_PtA ! current youtube trial tldr #TLDR EU
+#https://www.youtube.com/feeds/videos.xml?channel_id=UC-uhvujip5deVcEtLxnW8qg ! current youtube trial tldr #TLDR Global
+
+#https://www.youtube.com/feeds/videos.xml?channel_id=UC7dF9qfBMXrSlaaFFDvV_Yg current youtube anime #Gigguk
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCkFkOEN516tCINLuSzxXEEA current youtube simulation gamedev #EightLittleBears
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCbQNI0NSlEzENX9aFvL9j6w current youtube gamedev #RCwyatt 
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCWcTJXRXYVA6bWqXeAKoIag current youtube gamedev #FinalForEach
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCY6VZZo9MZCyIIozTs0khNA current youtube #easy, actually
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCakAg8hC_RFJm4RI3DlD7SA current youtube skits #brian david gilbert
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCJLZe_NoiG0hT7QCX_9vmqw current youtube #I did a thing
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCE_hjYd8HzRTVVXEr7jjHng current youtube anime show #Something Witty Entertainment
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCm325cMiw9B15xl22_gr6Dw current youtube #Beau Miles
+
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCd4t3EEUy0LUOM4MTdjpNHA current youtube style theorists #The Style Theorists
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCHYoe8kQ-7Gn9ASOlmI0k6Q current youtube nutrition theorists #The Food Theorists
+
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCbRP3c757lWg9M-U7TyEkXA ! youtube programming #Theo - t3.gg
+#https://www.youtube.com/feeds/videos.xml?channel_id=UC6CEsZWlyqj0p2e6N_GvF1w current youtube programming #Brook Jeynes
+#"query:Primeagen:tags # \"primeagen\"" current youtube primeagen
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCUyeluBRhGPCW4rPe_UvBZQ ! current youtube programming primeagen #ThePrimeTime
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCVk4b-svNJoeytrrlOixebQ ! current youtube programming primeagen #TheVimeagen
+
+#https://ziglang.org/news/index.xml current #Zig News
+#https://www.lrb.co.uk/feeds/rss current #London Review of Books

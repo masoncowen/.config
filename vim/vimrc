@@ -72,6 +72,7 @@ if ! empty(globpath(&rtp, 'autoload/plug.vim'))
   Plug 'tpope/vim-unimpaired'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-endwise'
+  Plug 'tpope/vim-vinegar'
   Plug 'preservim/vim-markdown'
   "Plug 'vim-latex/vim-latex'
   "Plug 'junegunn/fzf'
@@ -87,7 +88,7 @@ if ! empty(globpath(&rtp, 'autoload/plug.vim'))
   Plug 'kurkale6ka/vim-pairs'
   Plug 'chrisbra/csv.vim'
   Plug 'tpope/vim-fugitive'
-  " Plug 'ziglang/zig.vim'
+  Plug 'ziglang/zig.vim'
   call plug#end()
 else
   echo "vim-plug not installed"
@@ -118,37 +119,8 @@ set noswapfile
 set nobackup nowritebackup
 set undodir=~/.vim/undodir undofile
 
-
-""Autocomplete
-"function! OmniPopup(action)
-"  if pumvisible()
-"    if a:action == 'j'
-"      return "\<C-N>"
-"    elseif a:action == 'k'
-"      return "\<C-P>"
-"    endif
-"  endif
-"  return a:action
-"endfunction
-
-" inoremap <silent>j <c-r>=OmniPopup('j')<cr>
-" inoremap <silent>k <c-r>=OmniPopup('k')<cr>
-"
 "Basic mappings
 nmap Y y$
-
-"Autocomplete
-function! InsertTabWrapper()
-  let col = col('.') - 1
-  if !col || getline('.')[col - 1] !~ '\k'
-    return "\<tab>"
-  else
-    return "\<c-n>"
-  endif
-endfunction
-inoremap <tab> <c-r>=InsertTabWrapper()<cr>
-" inoremap <localleader>j <C-n>
-" inoremap <localleader>k <C-p>
 
 ""Subversive mappings
 nmap s <plug>(SubversiveSubstitute)
@@ -230,6 +202,14 @@ if expand('%:~') =~# '^\~\/writing'
   au VimEnter,BufEnter *.md setlocal path+=~/writing,~/writing/daily,~/writing/people
   au VimEnter,BufEnter *.md setlocal suffixesadd=.md
 endif
+if expand('%:~') =~# '^\~\/fiction'
+  let start_hour = strftime("%H")
+  let start_min = strftime("%M")
+  let start_wc = wordcount().words
+  let current_word_target = 2000
+  set laststatus=2
+  set statusline=%{wordcount().words}\ \/\ %{current_word_target}\ words\ (%{wordcount().words-start_wc}\ new\ words\ in\ %{strftime('%H')*60+strftime('%M')-start_hour*60-start_min}\ mins)
+endif
 function! NeatFoldText()
     let line = ' ' . substitute(getline(v:foldstart), '^\s*"\?\s*\|\s*"\?\s*{{' . '{\d*\s*', '', 'g') . ' '
     let lines_count = v:foldend - v:foldstart + 1
@@ -247,6 +227,11 @@ autocmd Filetype python nnoremap <buffer> <leader>gc :w<cr>:ter++close py %<cr>
 autocmd Filetype python nnoremap <buffer> <leader>go :w<cr>:ter py %<cr>
 autocmd Filetype python nnoremap <buffer> <leader>gt :w<cr>:tab ter py %<cr>
 autocmd FileType python set shiftwidth=2 tabstop=2 softtabstop=2
+""Go
+autocmd Filetype go nnoremap <buffer> <leader>gc :w<cr>:ter++close go run %<cr>
+autocmd Filetype go nnoremap <buffer> <leader>go :w<cr>:ter go run %<cr>
+autocmd Filetype go nnoremap <buffer> <leader>gt :w<cr>:tab ter go run %<cr>
+autocmd FileType go set shiftwidth=2 tabstop=2 softtabstop=2
 ""AutoHotKey
 autocmd Filetype autohotkey nnoremap <buffer> <leader>g :w<cr>:ter++close 
       \autohotkey %<cr>

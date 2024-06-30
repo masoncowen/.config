@@ -1,0 +1,219 @@
+cd
+ls
+vim .zshenv
+vim ../.zshenv
+ls
+cd
+cat .profile
+vim .profile
+ls -la
+cd .config
+mv sh/.profile sh/profile
+cd
+ls -la
+rm .profile
+cd ..
+cd-
+cd -
+ls
+ls
+cat zsh/*
+vim zsh/zshrc
+mkdir bash
+touch bash/bashrc
+cp zsh/zshrc bash/bashrc
+vim bash/bashrc
+vim .config/zsh/zshrc
+exit
+ls
+vim .config/sh/profile
+ls
+cd prj
+ls
+mkdir yt
+cd yt
+ls
+vim README.md
+ls
+cd /Volumes/Untitled
+ls
+ls
+ls -a
+cd ..
+ls
+ls Untitled
+df
+mount
+ls
+ls
+ls
+ls /dev
+mount
+mount
+df
+fstab
+ls
+ls Untitled
+cd .config
+ls
+cd skhd
+vim skhdrc
+man tmyx
+man tmux
+newsboat
+newsboat
+ls
+cd Downloads
+ls
+rm mac\(1\).zip
+cat mac/install.sh
+cd mac
+ls
+cat ReadMe.txt
+cat node/x64/node
+cd Downloads/mac
+ls
+./install.sh
+cat .config/newsboat/config
+ls
+ls files
+mv Downloads/windbreaker_vol1.* Library
+ls Library
+mv Library/windbreaker_vol1.* files/Documents
+zathura files/Documents/windbreaker_vol1.epub
+zathura files/Documents/windbreaker_vol1.pdf
+cd files/Videos/temp
+yt-dlp -S res:1080 https://www.youtube.com/watch?v=uOJVWVONTw8
+yt-dlp -S res:1080 'https://www.youtube.com/watch?v=uOJVWVONTw8'
+yt-dlp -S res:1080 'https://www.youtube.com/watch?v=keJPw9iX1kw'
+yt-dlp -S res:1080 'https://www.youtube.com/watch?v=KBo7GN-LO3M'
+yt-dlp -S res:1080 'https://www.youtube.com/watch?v=rX84vcQ6uQ8&t=703s'
+ls
+ls
+ls
+ls
+cat $HOME/foo
+ls
+ls /
+ls /
+ls /
+ls
+cd Downloads
+ls
+chmod +x open_with_mac.py
+./open_with_mac.py install
+ls
+cat open_with_mac.py
+chmod u+x open_with_mac.py
+./open_with_mac.py install
+ls
+./open_with_mac.py
+./open_with_mac.py install
+ls
+rm -r mac
+rm mac.zip
+ls
+./open_with_mac.py
+./open_with_mac.py install
+ls
+ls -a
+python
+python open_with_mac.py install
+python open_with_mac.py
+ls -la
+vim open_with_mac.py
+python open_with_mac.py
+python open_with_mac.py install
+vim open_with_mac.py
+python open_with_mac.py install
+vim open_with_mac.py
+python open_with_mac.py install
+vim open_with_mac.py
+python open_with_mac.py install
+vim open_with_mac.py
+python open_with_mac.py install
+yabai -m space create
+yabai -m space --create
+yabai -m space --destory
+yabai -m space --destroy
+cd .config/yabai
+ls
+vim yabairc
+yabai --restart-service
+yabai --install-sa
+yabai --help
+yabai --load-sa
+sudo yabai --load-sa
+vim yabairc
+man yabai
+vim .config/skhd/skhdrc
+skhd --help
+skhd -h
+skhd -reload
+skhd --restart
+skhd --restart-service
+vim .config/skhd/skhdrc
+brew search audacity
+brew info audacity
+brew install audacity
+ffmpeg -framerate 5 -pattern_type glob -i /Volumes/Untitled/DCIM/100MSDCF/DSC0*.JPG -c:v libx264 -pix_fmt yuv420p out.mp4
+mkdir mp4_test
+cd mp4_test
+mkdir src
+cd src
+cp /Volumes/2024ish/DCIM/100MS/DSC09*.JPG .
+ls
+cd ..
+ls
+ffmpeg -framerate 5 -pattern_type glob -i src/* -c:v libx264 -pix_fmt yuv420p out.mp4
+ffmpeg -framerate 5 -pattern_type glob -i "src/*" -c:v libx264 -pix_fmt yuv420p out.mp4
+ffmpeg -framerate 5 -pattern_type glob -i "src/*" -c:v libx264 -pix_fmt yuv420p out.mp4
+ls
+ls src
+ffmpeg -framerate 5 -pattern_type glob -i "src/*.JPG" -c:v libx264 -pix_fmt yuv420p out.mp4
+vim
+cd mp4_test
+ls src
+ls
+cp out.mp4 o.mp4
+ls
+mpv o.mp4
+rm o.mp4
+ls
+mpv out.mp4
+cd files/Videos/temp
+../watch.sh Helmet,\ Chest\ Piece,\ Pants\ \&\ Shoes\ -\ Hermitcraft\ Season\ 10\ Episode\ 15\ \[IPxAU4oeFno\].webm
+../watch.sh I\ put\ Twitch\ Chat\ on\ trial\ for\ their\ unethical\ behavior\ \[Kpnq9mEvHi8\].webm
+../watch.sh I\ used\ Barack\ Obamaâ€ƒ¹s\ hands\ to\ win\ a\ game\ of\ Mario\ Party\ \[Sg5m-BaILnA\].webm
+../watch.sh How\ Adaptability\ Sets\ You\ Apart\ In\ Today\'s\ World\ \[n4A5eRNyMrE\].webm
+../watch.sh Hermitcraft\ 10\ -\ Mangrove\ Bay\ -\ Ep.\ 17\ \[LucTz4AUqIQ\].webm
+../watch.sh Hermitcraft\ 10ï¼ƒº\ Episode\ 17\ -\ NEXT\ BIG\ PROJECT\!\ \[G2MP397EtSE\].webm
+../watch.sh Minecraft\ Hermitcraft\ ï¼ƒºï¼ƒº\ What\ Have\ I\ DONE\!ï¼ƒ¿\ \[zOaQ7xTm1Sg\].webm
+../watch.sh Hedgehog,\ The\ Best\ Pet\ Mammalï¼ƒ¿\ \[0BT1dpuxVWo\].webm
+../watch.sh The\ Pain\ Factory.\ \[K1NFm6nAZJ8\].webm
+../watch.sh I\ Added\ a\ Baby\ Crocodile\ Into\ My\ Giant\ Rainforest\ Vivarium\ \[sqN9pi3SIXk\].webm
+../watch.sh Duck\ Detective\ and\ the\ Secret\ Salamiï¼ƒº\ A\ Cinematic\ Masterpiece\ \[oee_MYaygh8\].webm
+../watch.sh The\ Neuroscience\ Behind\ Fixing\ Your\ Sleep\ Schedule\ \[cyKEfejsVps\].webm
+../watch.sh Dr.\ K\ Chats\ with\ @aliabdaal\ \[iMeyTBu11eY\].webm
+../watch.sh My\ Baby\ Crocodile\ is\ Hunting\ Land\ Creatures\ in\ My\ Giant\ Rainforest\ Vivarium\ \[9F0va4cXSN4\].webm
+../watch.sh I\ Visited\ the\ World\'s\ Busiest\ Train\ Station\ \[6dKiEY0UOtA\].webm
+../watch.sh Iâ€ƒ¹m\ in\ House\ of\ the\ Dragonðƒ¿ƒ°ƒ©\ \[eZIOns-4PuU\].webm
+../watch.sh Monument\ of\ Pettiness\ -\ Hermitcraft\ Season\ 10\ Episode\ 16\ \[Tjjux1b1mpg\].webm
+../watch.sh Can\ Art\ Save\ the\ Worldï¼ƒ¿\ \[0oTzg2R3RcY\].webm
+../watch.sh Dr.\ K\ Chats\ with\ @Sapnap\ \[NJociq1KZGI\].webm
+../watch.sh The\ Ore\ Snatcher\ -\ Hermitcraft\ Season\ 10\ Episode\ 17\ \[caD2vPGRock\].webm
+../watch.sh I\ Built\ My\ Next\ Giant\ Vivarium\ II\ and\ It\'s\ Ready\ For\ Life\ \[fETYOZodXbo\].webm
+../watch.sh I\ Redstoned\ Wordle\ in\ Minecraft\ ï½ƒ¼\ Hermitcraft\ 10ï¼ƒº\ Episode\ 18\ \[s9hlWo0y1VA\].webm
+ls
+newsboat
+newsboat
+man yabai
+cat .config/newsboat/config
+cd prj/pf2e
+vim todolist.md
+git st
+ls
+vim .gitignore
+ls
+vim README.md
+ls

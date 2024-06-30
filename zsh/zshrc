@@ -1,0 +1,2 @@
+PROMPT="%{$(tput setaf 39)%}%n%{$(tput setaf 73)%}@%{$(tput setaf 115)%}%m %{$(tput setaf 147)%}%1~ %{$(tput sgr0)%}$ "
+source $HOME/.config/sh/profile
