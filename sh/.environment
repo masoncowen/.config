@@ -1,5 +1,6 @@
 CONFIG=$XDG_CONFIG_HOME; export CONFIG
 BIN=$CONFIG/bin; export BIN
+LOCAL=$HOME/.local; export LOCAL
 
 SH_CONFIG=$CONFIG/sh; export SH_CONFIG
 PROFILE=$SH_CONFIG/.profile; export PROFILE
