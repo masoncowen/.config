@@ -48,6 +48,54 @@ else
   endif
 endif
 
+if empty($ISWORK)
+  autocmd BufEnter * if &filetype == "" | setlocal ft=markdown | endif
+  let g:vim_markdown_math = 1
+  let g:vim_markdown_frontmatter = 1
+  set conceallevel=2
+  let g:netrw_browsex_viewer= "start"
+  au BufEnter *.md setlocal foldexpr=MarkdownLevel()
+  au BufEnter *.md setlocal foldmethod=expr
+  au BufEnter *.md setlocal foldlevel=2
+
+  if expand('%:~') =~# '^\~\/writing'
+    au VimEnter,BufEnter *.md setlocal path+=~/writing,~/writing/daily,~/writing/people
+    au VimEnter,BufEnter *.md setlocal suffixesadd=.md
+  endif
+  if expand('%:~') =~# '^\~\/fiction'
+    let start_hour = strftime("%H")
+    let start_min = strftime("%M")
+    let start_wc = wordcount().words
+    let current_word_target = 2000
+    set laststatus=2
+    set statusline=%{wordcount().words}\ \/\ %{current_word_target}\ words\ (%{wordcount().words-start_wc}\ new\ words\ in\ %{strftime('%H')*60+strftime('%M')-start_hour*60-start_min}\ mins)
+  endif
+  ""Go
+  autocmd Filetype go nnoremap <buffer> <leader>gc :w<cr>:ter++close go run %<cr>
+  autocmd Filetype go nnoremap <buffer> <leader>go :w<cr>:ter go run %<cr>
+  autocmd Filetype go nnoremap <buffer> <leader>gt :w<cr>:tab ter go run %<cr>
+  autocmd FileType go set shiftwidth=2 tabstop=2 softtabstop=2
+  let lspGoServer = [#{
+    \    name: 'gopls',
+    \    filetype: ['go', 'gomod'],
+    \    path: '/usr/local/bin/gopls',
+    \    args: ['serve'],
+    \    syncInit: v:true
+    \  }]
+  autocmd User LspSetup call LspAddServer(lspGoServer)
+  "Zig
+   autocmd Filetype zig autocmd! vim-zig BufWrite
+   autocmd Filetype zig nnoremap <buffer> <leader>g :w<cr>:ter++close
+         \ C:\\Users\\mason.owen\\.local\\bin\\zig-windows-x86_64-0.13.0\\zig.exe build run<cr>
+   autocmd Filetype zig nnoremap <buffer> <leader>go :w<cr>:ter
+         \ C:\\Users\\mason.owen\\.local\\bin\\zig-windows-x86_64-0.13.0\\zig.exe build run<cr>
+   autocmd Filetype zig nnoremap <buffer> <leader>f :w<cr>:ter
+         \ C:\\Users\\mason.owen\\.local\\bin\\zig-windows-x86_64-0.13.0\\zig.exe
+  let pylsp_path='/usr/local/bin/pylsp'
+else
+  let pylsp_path='/c/Users/Owenm/AppData/Roaming/Python/Python314/Scripts/pylsp.exe'
+endif
+
 " Plugins
 filetype plugin on
 if ! empty(globpath(&rtp, 'autoload/plug.vim'))
@@ -178,27 +226,6 @@ function! MarkdownLevel()
   endif
 endfunction
 
-autocmd BufEnter * if &filetype == "" | setlocal ft=markdown | endif
-let g:vim_markdown_math = 1
-let g:vim_markdown_frontmatter = 1
-set conceallevel=2
-let g:netrw_browsex_viewer= "start"
-au BufEnter *.md setlocal foldexpr=MarkdownLevel()
-au BufEnter *.md setlocal foldmethod=expr
-au BufEnter *.md setlocal foldlevel=2
-
-if expand('%:~') =~# '^\~\/writing'
-  au VimEnter,BufEnter *.md setlocal path+=~/writing,~/writing/daily,~/writing/people
-  au VimEnter,BufEnter *.md setlocal suffixesadd=.md
-endif
-if expand('%:~') =~# '^\~\/fiction'
-  let start_hour = strftime("%H")
-  let start_min = strftime("%M")
-  let start_wc = wordcount().words
-  let current_word_target = 2000
-  set laststatus=2
-  set statusline=%{wordcount().words}\ \/\ %{current_word_target}\ words\ (%{wordcount().words-start_wc}\ new\ words\ in\ %{strftime('%H')*60+strftime('%M')-start_hour*60-start_min}\ mins)
-endif
 function! NeatFoldText()
     let line = ' ' . substitute(getline(v:foldstart), '^\s*"\?\s*\|\s*"\?\s*{{' . '{\d*\s*', '', 'g') . ' '
     let lines_count = v:foldend - v:foldstart + 1
@@ -219,34 +246,12 @@ autocmd Filetype python nnoremap <buffer> <leader>gc :w<cr>:ter++close py %<cr>
 autocmd Filetype python nnoremap <buffer> <leader>go :w<cr>:ter py %<cr>
 autocmd Filetype python nnoremap <buffer> <leader>gt :w<cr>:tab ter py %<cr>
 autocmd FileType python set shiftwidth=2 tabstop=2 softtabstop=2
-	" \    path: '/c/Users/mason.owen/AppData/Local/Programs/Python/Python311/Scripts/pylsp',
 let lspPythonServer = [#{
 	\    name: 'pylsp',
 	\    filetype: 'python',
-	\    path: '/usr/local/bin/pylsp',
+	\    path: pylsp_path,
   \    args: [],
 	\    syncInit: v:true
 	\  }]
 autocmd User LspSetup call LspAddServer(lspPythonServer)
-""Go
-autocmd Filetype go nnoremap <buffer> <leader>gc :w<cr>:ter++close go run %<cr>
-autocmd Filetype go nnoremap <buffer> <leader>go :w<cr>:ter go run %<cr>
-autocmd Filetype go nnoremap <buffer> <leader>gt :w<cr>:tab ter go run %<cr>
-autocmd FileType go set shiftwidth=2 tabstop=2 softtabstop=2
-let lspGoServer = [#{
-  \    name: 'gopls',
-  \    filetype: ['go', 'gomod'],
-  \    path: '/usr/local/bin/gopls',
-  \    args: ['serve'],
-  \    syncInit: v:true
-  \  }]
-autocmd User LspSetup call LspAddServer(lspGoServer)
 
-"Zig
- autocmd Filetype zig autocmd! vim-zig BufWrite
- autocmd Filetype zig nnoremap <buffer> <leader>g :w<cr>:ter++close
-       \ C:\\Users\\mason.owen\\.local\\bin\\zig-windows-x86_64-0.13.0\\zig.exe build run<cr>
- autocmd Filetype zig nnoremap <buffer> <leader>go :w<cr>:ter
-       \ C:\\Users\\mason.owen\\.local\\bin\\zig-windows-x86_64-0.13.0\\zig.exe build run<cr>
- autocmd Filetype zig nnoremap <buffer> <leader>f :w<cr>:ter
-       \ C:\\Users\\mason.owen\\.local\\bin\\zig-windows-x86_64-0.13.0\\zig.exe
