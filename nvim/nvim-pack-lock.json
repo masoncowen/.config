@@ -1,0 +1,16 @@
+{
+  "plugins": {
+    "mini.comment": {
+      "rev": "fc87ba6554f182161d9a4bab5017c575571f000f",
+      "src": "https://github.com/nvim-mini/mini.comment"
+    },
+    "mini.surround": {
+      "rev": "c375ea503646fe8393593b5fb8a40406eaa437b2",
+      "src": "https://github.com/nvim-mini/mini.surround"
+    },
+    "substitute.nvim": {
+      "rev": "0d2077398552f069abccbd964a26dd7cd26882cd",
+      "src": "https://github.com/gbprod/substitute.nvim"
+    }
+  }
+}
